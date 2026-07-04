@@ -9,32 +9,36 @@
       },
       {
         "layers": [
+          "white",
           "ice",
           "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
           "ash"
         ]
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
+          "ash",
           "white"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ash"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 12,
+    "targetMoves": 10,
     "colors": 3
   },
   {
@@ -44,35 +48,39 @@
     "tubes": [
       {
         "layers": [
+          "ice",
+          "ice",
           "white",
-          "white",
-          "white",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
           "white"
         ]
       },
       {
         "layers": [
+          "ash",
+          "ash",
           "ice",
-          "ice",
-          "ice",
-          "ice"
+          "white"
         ]
-      },
-      {
-        "layers": []
       },
       {
         "layers": [
           "ash",
           "ash",
-          "ash",
-          "ash"
+          "white"
         ]
+      },
+      {
+        "layers": []
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 14,
+    "targetMoves": 8,
     "colors": 3
   },
   {
@@ -82,17 +90,21 @@
     "tubes": [
       {
         "layers": [
+          "ice",
           "ash",
-          "ash",
-          "ash",
-          "ash"
+          "white"
         ]
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "ice",
           "white"
         ]
       },
@@ -101,16 +113,16 @@
       },
       {
         "layers": [
+          "white",
           "ice",
-          "ice",
-          "ice",
+          "ash",
           "ice"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 16,
+    "targetMoves": 10,
     "colors": 3
   },
   {
@@ -120,35 +132,39 @@
     "tubes": [
       {
         "layers": [
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": [
           "ash",
-          "ash",
-          "ash",
+          "ice",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "white",
           "ash"
         ]
       },
       {
         "layers": [
           "ice",
-          "ice",
-          "ice",
-          "ice"
+          "white",
+          "ash"
         ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": []
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 18,
+    "targetMoves": 10,
     "colors": 3
   },
   {
@@ -157,36 +173,40 @@
     "siteName": "Arctic Station",
     "tubes": [
       {
+        "layers": []
+      },
+      {
         "layers": [
-          "ash",
-          "ash",
-          "ash",
+          "white",
+          "white",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
           "ash"
         ]
       },
       {
         "layers": [
           "white",
+          "ice",
           "white",
-          "white",
-          "white"
+          "ice"
         ]
       },
       {
-        "layers": []
-      },
-      {
         "layers": [
+          "ash",
           "ice",
-          "ice",
-          "ice",
-          "ice"
+          "ash"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 20,
+    "targetMoves": 10,
     "colors": 3
   },
   {
@@ -196,10 +216,31 @@
     "tubes": [
       {
         "layers": [
+          "ice",
+          "ice",
+          "clay",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
           "clay",
           "clay",
-          "clay",
-          "clay"
+          "white",
+          "ice"
         ]
       },
       {
@@ -207,32 +248,15 @@
       },
       {
         "layers": [
+          "clay",
           "ice",
-          "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
           "ash"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 14,
+    "targetMoves": 11,
     "colors": 4
   },
   {
@@ -242,9 +266,7 @@
     "tubes": [
       {
         "layers": [
-          "ash",
-          "ash",
-          "ash",
+          "ice",
           "ash"
         ]
       },
@@ -252,24 +274,30 @@
         "layers": [
           "white",
           "white",
-          "white",
+          "ice",
           "white"
         ]
       },
       {
         "layers": [
-          "clay",
-          "clay",
-          "clay",
+          "ash",
+          "ash",
+          "white",
           "clay"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "ash"
         ]
       },
       {
         "layers": [
           "ice",
           "ice",
-          "ice",
-          "ice"
+          "clay"
         ]
       },
       {
@@ -278,7 +306,7 @@
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 16,
+    "targetMoves": 10,
     "colors": 4
   },
   {
@@ -287,44 +315,48 @@
     "siteName": "Arctic Station",
     "tubes": [
       {
+        "layers": [
+          "ice",
+          "clay",
+          "clay",
+          "white"
+        ]
+      },
+      {
         "layers": []
       },
       {
         "layers": [
           "ash",
           "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
           "ice"
         ]
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
+          "clay",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "clay",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
           "white"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 18,
+    "targetMoves": 11,
     "colors": 4
   },
   {
@@ -334,10 +366,15 @@
     "tubes": [
       {
         "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash"
+          "ice",
+          "ice",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "clay"
         ]
       },
       {
@@ -345,32 +382,31 @@
       },
       {
         "layers": [
+          "clay",
+          "ash",
           "white",
-          "white",
-          "white",
-          "white"
+          "ash"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
+          "ash",
+          "clay",
+          "ash",
           "ice"
         ]
       },
       {
         "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "white",
+          "white",
+          "ice"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 20,
+    "targetMoves": 12,
     "colors": 4
   },
   {
@@ -379,10 +415,24 @@
     "siteName": "Arctic Station",
     "tubes": [
       {
+        "layers": []
+      },
+      {
         "layers": [
+          "white",
           "ash",
-          "ash",
-          "ash",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": [
+          "clay",
+          "ice",
+          "white",
           "ash"
         ]
       },
@@ -391,32 +441,21 @@
           "clay",
           "clay",
           "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
           "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "ash"
         ]
       }
     ],
     "height": 4,
     "tampCharges": 2,
-    "targetMoves": 22,
+    "targetMoves": 12,
     "colors": 4
   },
   {
@@ -426,28 +465,34 @@
     "tubes": [
       {
         "layers": [
+          "ice",
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "ash",
+          "ice",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
           "lichen"
         ]
       },
       {
         "layers": [
           "ash",
+          "white",
+          "white",
           "ash",
-          "ash",
-          "ash",
-          "ash"
+          "lichen"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
+          "clay",
+          "clay",
+          "clay",
+          "clay",
           "ice"
         ]
       },
@@ -456,26 +501,24 @@
       },
       {
         "layers": [
+          "clay",
           "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "ash"
         ]
       },
       {
         "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "white",
+          "ash",
+          "ice",
+          "ice",
+          "lichen"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 16,
+    "targetMoves": 18,
     "colors": 5
   },
   {
@@ -484,29 +527,45 @@
     "siteName": "Arctic Station",
     "tubes": [
       {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
+        "layers": []
       },
       {
         "layers": [
           "white",
           "white",
-          "white",
-          "white",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "ice",
+          "lichen",
           "white"
         ]
       },
       {
         "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "ice",
+          "ice",
           "lichen"
         ]
       },
@@ -515,26 +574,14 @@
           "ash",
           "ash",
           "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
+          "white",
           "ice"
         ]
-      },
-      {
-        "layers": []
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 19,
+    "targetMoves": 16,
     "colors": 5
   },
   {
@@ -547,8 +594,26 @@
           "ice",
           "ice",
           "ice",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
           "ice",
-          "ice"
+          "ash",
+          "lichen"
         ]
       },
       {
@@ -556,26 +621,8 @@
           "clay",
           "clay",
           "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "lichen"
         ]
       },
       {
@@ -583,17 +630,20 @@
       },
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "white",
+          "white",
+          "white",
+          "ice",
           "lichen"
         ]
+      },
+      {
+        "layers": []
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 22,
+    "targetMoves": 16,
     "colors": 5
   },
   {
@@ -603,11 +653,11 @@
     "tubes": [
       {
         "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "ice",
+          "ice",
+          "ice",
+          "lichen",
+          "white"
         ]
       },
       {
@@ -615,44 +665,48 @@
       },
       {
         "layers": [
+          "ash",
+          "ash",
+          "lichen",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
           "white",
           "white",
-          "white",
-          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "clay",
+          "lichen",
           "white"
-        ]
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 25,
+    "targetMoves": 16,
     "colors": 5
   },
   {
@@ -662,19 +716,26 @@
     "tubes": [
       {
         "layers": [
+          "ice",
           "clay",
           "clay",
-          "clay",
-          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "ash",
+          "white",
           "clay"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
+          "ash",
+          "ash",
+          "clay",
           "ice"
         ]
       },
@@ -683,35 +744,32 @@
       },
       {
         "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
           "lichen",
           "lichen",
           "lichen",
-          "lichen",
-          "lichen"
+          "white",
+          "clay"
         ]
       },
       {
         "layers": [
           "white",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "lichen",
+          "lichen",
           "white",
-          "white",
-          "white",
-          "white"
+          "ice"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 28,
+    "targetMoves": 17,
     "colors": 5
   },
   {
@@ -721,65 +779,66 @@
     "tubes": [
       {
         "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
           "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
+          "lichen",
+          "ocean",
           "clay"
         ]
       },
       {
         "layers": [
+          "white",
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "white",
+          "ocean",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
           "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ocean",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "ice",
+          "ocean",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "ash",
+          "ash",
+          "white"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 20,
+    "targetMoves": 21,
     "colors": 6
   },
   {
@@ -789,10 +848,49 @@
     "tubes": [
       {
         "layers": [
+          "ice",
+          "clay",
+          "white",
+          "white",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "white",
+          "ice",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "lichen",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": [
+          "lichen",
+          "ice",
           "clay",
           "clay",
-          "clay",
-          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ash",
+          "ash",
+          "lichen",
           "clay"
         ]
       },
@@ -802,52 +900,13 @@
           "ocean",
           "ocean",
           "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
           "ash"
-        ]
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 23,
+    "targetMoves": 18,
     "colors": 6
   },
   {
@@ -856,42 +915,52 @@
     "siteName": "Arctic Station",
     "tubes": [
       {
-        "layers": []
-      },
-      {
         "layers": [
+          "ice",
+          "ice",
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
+          "ice",
           "white"
         ]
       },
       {
         "layers": [
+          "white",
+          "clay",
+          "ocean",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
           "ocean",
           "ocean",
           "ocean",
-          "ocean",
-          "ocean"
+          "clay",
+          "ash"
         ]
       },
       {
@@ -899,23 +968,14 @@
           "lichen",
           "lichen",
           "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
+          "ocean",
+          "white"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 26,
+    "targetMoves": 19,
     "colors": 6
   },
   {
@@ -925,10 +985,33 @@
     "tubes": [
       {
         "layers": [
+          "ice",
+          "ice",
+          "clay",
+          "white"
+        ]
+      },
+      {
+        "layers": [
           "white",
           "white",
-          "white",
-          "white",
+          "lichen",
+          "ash",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "ice",
           "white"
         ]
       },
@@ -936,54 +1019,32 @@
         "layers": [
           "lichen",
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "ash",
+          "ice",
           "ocean"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
+          "ocean",
+          "ocean",
+          "ocean",
+          "clay"
         ]
       },
       {
         "layers": [
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
+          "lichen",
+          "ice",
+          "ocean",
+          "clay"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 29,
+    "targetMoves": 20,
     "colors": 6
   },
   {
@@ -993,29 +1054,47 @@
     "tubes": [
       {
         "layers": [
+          "white",
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "ash",
+          "clay",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "white",
+          "white",
           "lichen"
         ]
       },
       {
         "layers": [
+          "ash",
+          "ash",
           "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
+          "clay",
+          "ocean"
         ]
       },
       {
         "layers": [
+          "clay",
+          "clay",
           "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "ash",
           "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "lichen",
+          "ice",
+          "clay"
         ]
       },
       {
@@ -1023,35 +1102,17 @@
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": [
+          "ice",
+          "ice",
+          "ice",
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "ocean"
         ]
       }
     ],
     "height": 5,
     "tampCharges": 2,
-    "targetMoves": 32,
+    "targetMoves": 19,
     "colors": 6
   },
   {
@@ -1061,81 +1122,82 @@
     "tubes": [
       {
         "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
+          "ice",
+          "ice",
+          "ice",
+          "ice",
+          "lichen",
           "clay"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
+          "white",
+          "white",
+          "white",
+          "clay"
         ]
       },
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "ash",
+          "ash",
+          "ash",
+          "ocean",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "white",
           "lichen"
         ]
       },
       {
-        "layers": []
+        "layers": [
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "ice",
+          "lichen"
+        ]
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "ocean",
+          "ocean",
+          "ocean",
+          "ocean",
+          "lichen"
         ]
       },
       {
         "layers": [
           "moss",
           "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
+          "ash",
+          "ash",
+          "ash",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ice",
+          "clay",
+          "white",
+          "clay"
         ]
       }
     ],
     "height": 6,
-    "tampCharges": 1,
-    "targetMoves": 24,
+    "tampCharges": 2,
+    "targetMoves": 22,
     "colors": 7
   },
   {
@@ -1145,21 +1207,21 @@
     "tubes": [
       {
         "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "ice",
+          "ice",
+          "ice",
+          "ice",
+          "ice",
+          "clay"
         ]
       },
       {
         "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "lichen",
+          "lichen",
+          "lichen",
+          "ash",
+          "moss",
           "ocean"
         ]
       },
@@ -1167,20 +1229,30 @@
         "layers": [
           "ash",
           "ash",
+          "white",
+          "white",
           "ash",
-          "ash",
-          "ash",
-          "ash"
+          "ocean"
         ]
       },
       {
         "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "lichen",
+          "ice",
           "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
+          "ocean"
         ]
       },
       {
@@ -1188,38 +1260,28 @@
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice"
+          "moss",
+          "moss",
+          "moss",
+          "ash",
+          "moss",
+          "ocean"
         ]
       },
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "white",
+          "white",
+          "white",
+          "white",
+          "ash",
+          "ocean"
         ]
       }
     ],
     "height": 6,
-    "tampCharges": 1,
-    "targetMoves": 28,
+    "tampCharges": 2,
+    "targetMoves": 21,
     "colors": 7
   },
   {
@@ -1229,81 +1291,82 @@
     "tubes": [
       {
         "layers": [
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
+          "ice",
+          "ice",
+          "lichen",
+          "lichen",
           "ash"
         ]
       },
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
+          "white",
+          "white",
+          "white",
+          "moss",
+          "ice",
           "lichen"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "white",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ash",
+          "ash",
+          "lichen",
           "ice"
         ]
       },
       {
         "layers": [
+          "ocean",
+          "ocean",
+          "ocean",
           "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "ash",
+          "white"
         ]
       },
       {
-        "layers": []
+        "layers": [
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "ice"
+        ]
       },
       {
         "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "ocean",
+          "ocean",
+          "ocean",
+          "ice",
+          "clay",
+          "ash"
         ]
       }
     ],
     "height": 6,
-    "tampCharges": 1,
-    "targetMoves": 32,
+    "tampCharges": 2,
+    "targetMoves": 22,
     "colors": 7
   },
   {
@@ -1313,54 +1376,11 @@
     "tubes": [
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
           "ice",
           "ice",
           "ice",
-          "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "ash",
+          "moss",
           "ocean"
         ]
       },
@@ -1371,7 +1391,7 @@
           "white",
           "white",
           "white",
-          "white"
+          "ice"
         ]
       },
       {
@@ -1380,14 +1400,58 @@
           "ash",
           "ash",
           "ash",
+          "ice",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "ice",
+          "white",
+          "clay",
           "ash",
-          "ash"
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ocean",
+          "lichen",
+          "lichen",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "moss",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "moss",
+          "lichen"
         ]
       }
     ],
     "height": 6,
-    "tampCharges": 1,
-    "targetMoves": 36,
+    "tampCharges": 2,
+    "targetMoves": 22,
     "colors": 7
   },
   {
@@ -1397,81 +1461,82 @@
     "tubes": [
       {
         "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white",
+          "ice",
+          "ice",
+          "ice",
+          "ice",
+          "ocean",
           "white"
         ]
       },
       {
         "layers": [
+          "white",
+          "white",
+          "white",
           "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": []
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
           "ash"
         ]
       },
       {
         "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
+          "ash",
+          "ocean"
         ]
       },
       {
         "layers": [
-          "ice",
-          "ice",
-          "ice",
-          "ice",
-          "ice",
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "moss",
           "ice"
         ]
       },
       {
         "layers": [
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
+          "lichen",
+          "lichen",
+          "lichen",
+          "lichen",
+          "ash",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ocean",
+          "lichen",
+          "ash",
+          "ash",
           "moss"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "white",
+          "white",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "moss",
+          "moss",
+          "clay",
+          "clay",
+          "lichen"
         ]
       }
     ],
     "height": 6,
-    "tampCharges": 1,
-    "targetMoves": 40,
+    "tampCharges": 2,
+    "targetMoves": 22,
     "colors": 7
   },
   {
@@ -1484,9 +1549,8 @@
           "ice",
           "ice",
           "ice",
-          "ice",
-          "ice",
-          "ice"
+          "moss",
+          "rust"
         ]
       },
       {
@@ -1496,16 +1560,15 @@
           "white",
           "white",
           "white",
-          "white"
+          "clay"
         ]
       },
       {
         "layers": [
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
+          "rust",
+          "rust",
+          "rust",
           "ash"
         ]
       },
@@ -1515,54 +1578,60 @@
           "clay",
           "clay",
           "clay",
+          "ocean",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
           "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
           "lichen",
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
           "ocean"
         ]
       },
       {
         "layers": [
+          "ocean",
+          "ocean",
+          "ocean",
+          "ocean",
+          "ice",
+          "rust"
+        ]
+      },
+      {
+        "layers": [
           "moss",
+          "ash",
           "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
+          "ash"
         ]
       },
       {
         "layers": [
           "rust",
-          "rust",
-          "rust",
-          "rust",
-          "rust",
-          "rust"
+          "moss",
+          "ash",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ice",
+          "moss",
+          "ash"
         ]
       }
     ],
     "height": 6,
     "tampCharges": 2,
-    "targetMoves": 28,
+    "targetMoves": 27,
     "colors": 8
   },
   {
@@ -1575,85 +1644,89 @@
           "ice",
           "ice",
           "ice",
-          "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
-          "white",
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": [
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
           "lichen"
         ]
       },
       {
         "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
+          "white",
+          "white",
+          "white",
+          "white",
+          "ice",
+          "lichen"
         ]
       },
       {
         "layers": [
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
+          "ash",
+          "ash",
+          "ash",
+          "ash",
+          "white",
           "moss"
         ]
       },
       {
         "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "rust",
+          "rust",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ice",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ocean",
+          "ice",
+          "lichen",
+          "lichen",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "lichen",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "rust",
+          "ocean",
+          "ocean",
+          "ocean",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
           "rust",
           "rust",
           "rust",
-          "rust",
-          "rust",
-          "rust"
+          "clay"
         ]
       }
     ],
     "height": 6,
     "tampCharges": 2,
-    "targetMoves": 33,
+    "targetMoves": 24,
     "colors": 8
   },
   {
@@ -1667,67 +1740,70 @@
           "ice",
           "ice",
           "ice",
-          "ice",
-          "ice"
-        ]
-      },
-      {
-        "layers": [
           "white",
-          "white",
-          "white",
-          "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": [
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
           "ash"
         ]
       },
       {
         "layers": [
+          "white",
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": [
           "clay",
           "clay",
           "clay",
-          "clay",
-          "clay",
-          "clay"
+          "ocean",
+          "ocean",
+          "ash"
         ]
       },
       {
         "layers": [
           "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "white",
+          "clay",
+          "clay",
+          "ice",
           "ocean"
         ]
       },
       {
         "layers": [
+          "ocean",
+          "ocean",
+          "lichen",
+          "lichen",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
           "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
+          "lichen",
+          "ocean",
+          "lichen",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "rust",
+          "white",
+          "white",
+          "ash",
+          "ash",
           "moss"
         ]
       },
@@ -1738,13 +1814,13 @@
           "rust",
           "rust",
           "rust",
-          "rust"
+          "clay"
         ]
       }
     ],
     "height": 6,
     "tampCharges": 2,
-    "targetMoves": 38,
+    "targetMoves": 26,
     "colors": 8
   },
   {
@@ -1756,20 +1832,17 @@
         "layers": [
           "ice",
           "ice",
-          "ice",
-          "ice",
-          "ice",
+          "lichen",
           "ice"
         ]
       },
       {
         "layers": [
           "white",
+          "rust",
+          "rust",
           "white",
-          "white",
-          "white",
-          "white",
-          "white"
+          "ice"
         ]
       },
       {
@@ -1778,7 +1851,54 @@
           "ash",
           "ash",
           "ash",
-          "ash",
+          "lichen",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "white",
+          "white",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ocean",
+          "ocean",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "moss",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "rust",
+          "rust",
+          "rust",
+          "rust",
           "ash"
         ]
       },
@@ -1787,55 +1907,15 @@
           "clay",
           "clay",
           "clay",
-          "clay",
-          "clay",
-          "clay"
-        ]
-      },
-      {
-        "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
-        ]
-      },
-      {
-        "layers": [
           "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean"
-        ]
-      },
-      {
-        "layers": [
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss",
-          "moss"
-        ]
-      },
-      {
-        "layers": [
-          "rust",
-          "rust",
-          "rust",
-          "rust",
-          "rust",
-          "rust"
+          "lichen",
+          "ash"
         ]
       }
     ],
     "height": 6,
     "tampCharges": 2,
-    "targetMoves": 43,
+    "targetMoves": 26,
     "colors": 8
   },
   {
@@ -1846,10 +1926,9 @@
       {
         "layers": [
           "ice",
+          "ash",
           "ice",
-          "ice",
-          "ice",
-          "ice",
+          "ash",
           "ice"
         ]
       },
@@ -1859,57 +1938,52 @@
           "white",
           "white",
           "white",
-          "white",
-          "white"
-        ]
-      },
-      {
-        "layers": [
           "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash",
-          "ash"
-        ]
-      },
-      {
-        "layers": [
-          "clay",
-          "clay",
-          "clay",
-          "clay",
-          "clay",
           "clay"
         ]
       },
       {
         "layers": [
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen",
-          "lichen"
+          "ash",
+          "ice"
         ]
       },
       {
         "layers": [
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
-          "ocean",
+          "clay",
+          "clay",
+          "clay",
+          "clay",
+          "moss",
           "ocean"
         ]
       },
       {
         "layers": [
+          "lichen",
+          "lichen",
+          "lichen",
+          "clay",
+          "rust",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ocean",
+          "ocean",
+          "ash",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
           "moss",
           "moss",
           "moss",
-          "moss",
-          "moss",
+          "ocean",
+          "ocean",
           "moss"
         ]
       },
@@ -1919,14 +1993,24 @@
           "rust",
           "rust",
           "rust",
-          "rust",
+          "moss",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "lichen",
+          "white",
+          "white",
           "rust"
         ]
       }
     ],
     "height": 6,
     "tampCharges": 2,
-    "targetMoves": 48,
+    "targetMoves": 25,
     "colors": 8
   }
 ]

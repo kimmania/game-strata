@@ -1,16 +1,13 @@
 import json
 from collections import Counter
+from heapq import heappush, heappop
+import itertools
 import random
-
-random.seed(42)
 
 COLORS = ['ice','white','ash','clay','lichen','ocean','moss','rust']
 
 def make_solved(height, num_colors):
-    tubes = []
-    for c in range(num_colors):
-        tubes.append([COLORS[c]] * height)
-    return tubes
+    return [[COLORS[c]] * height for c in range(num_colors)]
 
 def top_block(tube):
     if not tube:
@@ -24,79 +21,165 @@ def top_block(tube):
             break
     return (color, count)
 
-def can_reverse_move(tubes, src, dst, height):
-    if not tubes[src]:
-        return False
-    color, count = top_block(tubes[src])
-    dst_has_room = len(tubes[dst]) + count <= height
-    if not dst_has_room:
-        return False
-    if not tubes[dst]:
-        return True
-    dst_color, _ = top_block(tubes[dst])
-    return dst_color == color
+# ---------- Reverse scrambling ----------
 
-def apply_reverse(tubes, src, dst):
-    color, count = top_block(tubes[src])
-    block = tubes[src][-count:]
-    tubes[src] = tubes[src][:-count]
-    tubes[dst].extend(block)
-
-def scramble(tubes, height, moves=120):
+def reverse_moves(tubes, height):
+    """Inverse-of-pour moves. Placing onto a DIFFERENT color mixes tubes."""
+    moves = []
     n = len(tubes)
+    for a in range(n):
+        color, blocklen = top_block(tubes[a])
+        if blocklen == 0:
+            continue
+        for k in range(1, blocklen + 1):
+            if not (k < blocklen or k == len(tubes[a])):
+                continue
+            for b in range(n):
+                if b == a:
+                    continue
+                if len(tubes[b]) + k > height:
+                    continue
+                b_color, _ = top_block(tubes[b])
+                if b_color == color:
+                    continue
+                moves.append((a, b, k))
+    return moves
+
+def apply_reverse(tubes, a, b, k):
+    block = tubes[a][-k:]
+    tubes[a] = tubes[a][:-k]
+    tubes[b] = tubes[b] + block
+
+def mix_score(tubes):
+    return sum(1 for t in tubes for i in range(1, len(t)) if t[i] != t[i-1])
+
+def scramble(tubes, height, moves, rng):
     for _ in range(moves):
-        valid = []
-        for s in range(n):
-            for d in range(n):
-                if s != d and can_reverse_move(tubes, s, d, height):
-                    valid.append((s, d))
+        valid = reverse_moves(tubes, height)
         if not valid:
             break
-        s, d = random.choice(valid)
-        apply_reverse(tubes, s, d)
+        # strongly prefer moves that increase mixing (onto non-empty, small k)
+        mixing = [m for m in valid if tubes[m[1]]]
+        pool = mixing if mixing and rng.random() < 0.9 else valid
+        a, b, k = rng.choice(pool)
+        apply_reverse(tubes, a, b, k)
     return tubes
 
-def make_level(cid, height, colors_count, empty, tamps, target, scramble_moves, seed):
-    random.seed(seed)
-    solved = make_solved(height, colors_count)
-    tubes = [list(t) for t in solved] + [[] for _ in range(empty)]
-    tubes = scramble(tubes, height, scramble_moves)
+# ---------- Forward solver (A*, pour only — no tamp) ----------
+
+def solved(tubes):
+    return all(len(set(t)) <= 1 for t in tubes)
+
+def solve(tubes, height, max_nodes=300000):
+    start = tuple(tuple(t) for t in tubes)
+    if solved(start):
+        return 0
+    seen = {start}
+    counter = itertools.count()
+    def h(st):
+        return sum(1 for t in st for i in range(1, len(t)) if t[i] != t[i-1])
+    frontier = [(h(start), 0, start, 0)]
+    nodes = 0
+    while frontier:
+        f, _, st, g = heappop(frontier)
+        nodes += 1
+        if nodes > max_nodes:
+            return None
+        lst = [list(t) for t in st]
+        n = len(lst)
+        for s in range(n):
+            c, k = top_block(lst[s])
+            if k == 0:
+                continue
+            for d in range(n):
+                if s == d:
+                    continue
+                dc, _ = top_block(lst[d])
+                if lst[d] and dc != c:
+                    continue
+                room = height - len(lst[d])
+                if room <= 0:
+                    continue
+                mv = min(k, room)
+                new = [list(t) for t in lst]
+                blk = new[s][-mv:]
+                new[s] = new[s][:-mv]
+                new[d] = new[d] + blk
+                nst = tuple(tuple(t) for t in new)
+                if nst in seen:
+                    continue
+                if solved(nst):
+                    return g + 1
+                seen.add(nst)
+                heappush(frontier, (g + 1 + h(nst), next(counter), nst, g + 1))
+    return None
+
+# ---------- Level factory ----------
+
+def make_level(cid, height, colors_count, empty, tamps, scramble_moves,
+               min_optimal, seed, target_margin):
+    """Generate a level; retry seeds and keep the deepest solvable candidate."""
+    best = None
+    best_opt = -1
+    for attempt in range(30):
+        rng = random.Random(seed + attempt * 1000)
+        tubes = make_solved(height, colors_count) + [[] for _ in range(empty)]
+        tubes = scramble(tubes, height, scramble_moves, rng)
+        if solved(tubes):
+            continue
+        opt = solve([list(t) for t in tubes], height)
+        if opt is None:
+            continue
+        if opt > best_opt:
+            best, best_opt = tubes, opt
+        if opt >= min_optimal:
+            break
+    if best is None:
+        raise RuntimeError(f"{cid}: could not generate a solvable level")
+    target = best_opt + target_margin
     return {
         "id": cid,
         "site": "arctic",
         "siteName": "Arctic Station",
-        "tubes": [{"layers": list(t)} for t in tubes],
+        "tubes": [{"layers": list(t)} for t in best],
         "height": height,
         "tampCharges": tamps,
         "targetMoves": target,
         "colors": colors_count
-    }
+    }, best_opt
 
 levels = []
+report = []
 
-# Tier 1: 3 colors, h=4, 1 empty (4 tubes). Entry/intro.
+# Tier 1: 3 colors, h=4, 2 empty. Gentle intro.
 for i in range(5):
-    levels.append(make_level(f"a{i+1:02d}", 4, 3, 1, 2, 12 + i*2, 40 + i*6, seed=1 + i))
+    lvl, opt = make_level(f"a{i+1:02d}", 4, 3, 2, 2, 60, 5 + i // 2, seed=100 + i, target_margin=3)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
-# Tier 2: 4 colors, h=4, 1 empty (5 tubes). Easy.
+# Tier 2: 4 colors, h=4, 2 empty.
 for i in range(5):
-    levels.append(make_level(f"a{i+6:02d}", 4, 4, 1, 2, 14 + i*2, 50 + i*6, seed=10 + i))
+    lvl, opt = make_level(f"a{i+6:02d}", 4, 4, 2, 2, 80, 7 + i // 2, seed=200 + i, target_margin=3)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
-# Tier 3: 5 colors, h=5, 1 empty (6 tubes). Medium.
+# Tier 3: 5 colors, h=5, 2 empty.
 for i in range(5):
-    levels.append(make_level(f"a{i+11:02d}", 5, 5, 1, 2, 16 + i*3, 60 + i*7, seed=20 + i))
+    lvl, opt = make_level(f"a{i+11:02d}", 5, 5, 2, 2, 100, 11 + i // 2, seed=300 + i, target_margin=4)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
-# Tier 4: 6 colors, h=5, 1 empty (7 tubes). Tamp required.
+# Tier 4: 6 colors, h=5, 1 empty. Tight — tamp very useful.
 for i in range(5):
-    levels.append(make_level(f"a{i+16:02d}", 5, 6, 1, 2, 20 + i*3, 70 + i*8, seed=30 + i))
+    lvl, opt = make_level(f"a{i+16:02d}", 5, 6, 1, 2, 120, 14 + i // 2, seed=400 + i, target_margin=4)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
-# Tier 5: 7 colors, h=6, 1 empty (8 tubes). Hard.
+# Tier 5: 7 colors, h=6, 1 empty. Hard.
 for i in range(5):
-    levels.append(make_level(f"a{i+21:02d}", 6, 7, 1, 1, 24 + i*4, 80 + i*9, seed=40 + i))
+    lvl, opt = make_level(f"a{i+21:02d}", 6, 7, 1, 2, 150, 17 + i // 2, seed=500 + i, target_margin=5)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
-# Tier 6: 8 colors, h=6, 0 empty (8 tubes). Expert — only solvable with tamp.
+# Tier 6: 8 colors, h=6, 1 empty. Expert.
 for i in range(5):
-    levels.append(make_level(f"a{i+26:02d}", 6, 8, 0, 2, 28 + i*5, 90 + i*10, seed=50 + i))
+    lvl, opt = make_level(f"a{i+26:02d}", 6, 8, 1, 2, 180, 20 + i // 2, seed=600 + i, target_margin=5)
+    levels.append(lvl); report.append((lvl['id'], opt, lvl['targetMoves']))
 
 # Verify layer counts
 for lvl in levels:
@@ -110,4 +193,6 @@ for lvl in levels:
 with open('src/engine/puzzles.json', 'w') as f:
     json.dump(levels, f, indent=2)
 
+for rid, opt, target in report:
+    print(f"{rid}: optimal={opt} target={target}")
 print(f"Generated {len(levels)} levels")

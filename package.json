@@ -1,0 +1,17 @@
+{
+  "name": "game-strata",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "generate-puzzles": "node scripts/generate-puzzles.js",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^6.4.3",
+    "vite-plugin-pwa": "^0.21.2"
+  }
+}

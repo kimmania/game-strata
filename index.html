@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0f1c24" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Strata" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="description" content="A meditative ice-core sampling puzzle for iPad and mobile." />
+
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
+
+  <title>Strata — Ice-Core Puzzle</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Intro story screen -->
+    <div id="intro-screen" class="screen active">
+      <div class="intro-content">
+        <h1>Strata</h1>
+        <h2>Ice-Core Sampling</h2>
+        <p class="intro-text">
+          You are a research scientist at Arctic Station Aurora, extracting drill cores from the polar ice shelf. Each transparent tube preserves a vertical timeline of geological epochs — bands of ice, volcanic ash, clay, and ancient pollen.
+        </p>
+        <p class="intro-text">
+          Your job is to clean and catalog the cores: separate each sediment color into its own tube. Use <strong>Tamp</strong> to compress completed bottom blocks and recover precious vertical space.
+        </p>
+        <button id="start-game" class="btn btn-primary">Begin Expedition</button>
+      </div>
+    </div>
+
+    <!-- Level select / map screen -->
+    <div id="map-screen" class="screen">
+      <div class="map-topbar">
+        <button id="map-settings" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+        <button id="map-help" class="icon-btn" title="How to Play" aria-label="How to Play">?</button>
+      </div>
+      <div class="map-header">
+        <h1>Arctic Station</h1>
+        <p class="map-subtitle">Expedition Log</p>
+      </div>
+      <div id="map-container">
+        <div class="region-path" id="path-arctic"></div>
+      </div>
+    </div>
+
+    <!-- Game screen -->
+    <div id="game-screen" class="screen">
+      <header class="top-bar">
+        <button id="map-return" class="icon-btn" title="Back to Map" aria-label="Back to Map">🗺</button>
+        <button id="undo-btn" class="icon-btn" title="Undo" aria-label="Undo">↶</button>
+        <button id="reset-btn" class="icon-btn" title="Reset Level" aria-label="Reset Level">↻</button>
+        <div class="level-info">
+          <span id="level-label">Core Sample</span>
+          <span id="level-number">a01</span>
+        </div>
+        <div class="moves-info" aria-live="polite" aria-atomic="true">
+          <span class="moves-label" id="moves-label">Moves</span>
+          <span id="move-count" aria-labelledby="moves-label">0</span>
+          <span class="target-moves" id="target-moves">/ —</span>
+        </div>
+        <button id="settings-btn" class="icon-btn" title="Settings" aria-label="Settings">⚙</button>
+        <button id="help-btn" class="icon-btn" title="Help" aria-label="Help">?</button>
+      </header>
+
+      <main id="game-area">
+        <div id="tube-rack"></div>
+        <div id="tamp-bar">
+          <button id="tamp-btn" class="btn btn-bright" disabled>
+            <span class="tamp-icon">❄</span>
+            <span class="tamp-label">Tamp</span>
+            <span id="tamp-count" class="tamp-count">0</span>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Overlays -->
+    <div id="help-overlay" class="overlay">
+      <div class="modal help-modal">
+        <button class="close-btn" id="help-close" aria-label="Close">×</button>
+        <h2>How to Play</h2>
+        <div class="help-sections">
+          <section>
+            <h3>Sampling</h3>
+            <p>Tap a <strong>source</strong> core tube to select it. Then tap a <strong>destination</strong> tube to pour the top sediment layers.</p>
+            <p>You may only pour onto a matching color or into an empty tube.</p>
+          </section>
+          <section>
+            <h3>Block Pouring</h3>
+            <p>When you pour, <strong>all</strong> matching layers at the top move together as one block.</p>
+          </section>
+          <section>
+            <h3>Tamping</h3>
+            <p>Select a tube with a bottom block of matching layers (2+), then press <strong>Tamp</strong> to compress them into one dense layer. This frees up vertical space.</p>
+            <p>Tamp charges are limited per level!</p>
+          </section>
+          <section>
+            <h3>Goal</h3>
+            <p>Every non-empty tube must contain <strong>only one uniform sediment color</strong>. Empty tubes are fine.</p>
+            <p>Complete within target moves with leftover tamp charges for 3 stars.</p>
+          </section>
+        </div>
+        <button id="help-dismiss" class="btn btn-primary">Got It</button>
+      </div>
+    </div>
+
+    <div id="settings-overlay" class="overlay">
+      <div class="modal settings-modal">
+        <button class="close-btn" id="settings-close" aria-label="Close">×</button>
+        <h2>Settings</h2>
+        <div class="settings-row">
+          <span>Sound Effects</span>
+          <button id="sound-toggle" class="toggle" role="switch" aria-checked="true"><span class="toggle-label">On</span></button>
+        </div>
+        <div class="settings-row">
+          <span>Music</span>
+          <button id="music-toggle" class="toggle" role="switch" aria-checked="true"><span class="toggle-label">On</span></button>
+        </div>
+        <div class="settings-row">
+          <span>Reduced Motion</span>
+          <button id="motion-toggle" class="toggle" role="switch" aria-checked="false"><span class="toggle-label">Off</span></button>
+        </div>
+        <div class="settings-row">
+          <span>High Contrast</span>
+          <button id="contrast-toggle" class="toggle" role="switch" aria-checked="false"><span class="toggle-label">Off</span></button>
+        </div>
+        <div class="settings-divider"></div>
+        <button id="reset-progress-btn" class="btn btn-danger">Reset All Progress</button>
+        <button id="reset-confirm-btn" class="btn btn-danger hidden">Tap again to confirm</button>
+        <div class="settings-divider"></div>
+        <a href="https://kimmania.github.io/games-overview/" rel="noopener noreferrer" target="_blank" class="btn btn-secondary" style="width:100%; justify-content:center;">More Games →</a>
+      </div>
+    </div>
+
+    <div id="level-complete-overlay" class="overlay">
+      <div class="modal level-modal">
+        <h2 id="lc-title">Core Catalogued!</h2>
+        <div class="stars" id="lc-stars">
+          <span class="star" data-i="1">⭐</span>
+          <span class="star" data-i="2">⭐</span>
+          <span class="star" data-i="3">⭐</span>
+        </div>
+        <p id="lc-moves">Moves: <span class="value">0</span></p>
+        <p id="lc-target">Target: <span class="value">0</span></p>
+        <p id="lc-best">Best: <span class="value">0</span></p>
+        <p id="lc-message" class="lc-message">The core is clean and ready for analysis.</p>
+        <div class="level-modal-actions">
+          <button id="lc-retry" class="btn">Replay</button>
+          <button id="lc-map" class="btn btn-secondary">Map</button>
+          <button id="lc-next" class="btn btn-primary">Next Core</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="reset-overlay" class="overlay">
+      <div class="modal reset-modal">
+        <p>Reset this core sample?</p>
+        <div class="modal-actions">
+          <button id="reset-cancel" class="btn">Cancel</button>
+          <button id="reset-confirm" class="btn btn-danger">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="aria-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+  </div>
+
+  <script type="module" src="src/main.ts"></script>
+</body>
+</html>

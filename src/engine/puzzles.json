@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "a01",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "white",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "ice",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 3,
+    "targetMoves": 8,
+    "colors": 3
+  },
+  {
+    "id": "a02",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "ash",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "ash",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "ice",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 3,
+    "targetMoves": 8,
+    "colors": 3
+  },
+  {
+    "id": "a03",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 10,
+    "colors": 3
+  },
+  {
+    "id": "a04",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ash",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "ash",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 10,
+    "colors": 3
+  },
+  {
+    "id": "a05",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ash",
+          "white",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ice",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 12,
+    "colors": 3
+  },
+  {
+    "id": "a06",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "clay",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "ash",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "clay",
+          "clay"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 14,
+    "colors": 4
+  },
+  {
+    "id": "a07",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "clay",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "ash",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "clay",
+          "clay"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 14,
+    "colors": 4
+  },
+  {
+    "id": "a08",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 16,
+    "colors": 4
+  },
+  {
+    "id": "a09",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ash",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "clay",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "ice",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 16,
+    "colors": 4
+  },
+  {
+    "id": "a10",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "clay",
+          "ice",
+          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "ash",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "clay",
+          "ice",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 4,
+    "tampCharges": 2,
+    "targetMoves": 18,
+    "colors": 4
+  },
+  {
+    "id": "a11",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "white",
+          "ash",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "clay",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "lichen",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ice",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 2,
+    "targetMoves": 20,
+    "colors": 5
+  },
+  {
+    "id": "a12",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "white",
+          "white",
+          "ash",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "ash",
+          "clay",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "clay",
+          "lichen",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "lichen",
+          "ice",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "ice",
+          "white",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 2,
+    "targetMoves": 22,
+    "colors": 5
+  },
+  {
+    "id": "a13",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 2,
+    "targetMoves": 24,
+    "colors": 5
+  },
+  {
+    "id": "a14",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 2,
+    "targetMoves": 26,
+    "colors": 5
+  },
+  {
+    "id": "a15",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "ash",
+          "lichen",
+          "white",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ice",
+          "clay",
+          "ash",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "white",
+          "lichen",
+          "clay",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "ash",
+          "ice",
+          "lichen",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "clay",
+          "white",
+          "ice",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 2,
+    "targetMoves": 28,
+    "colors": 5
+  },
+  {
+    "id": "a16",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 1,
+    "targetMoves": 30,
+    "colors": 6
+  },
+  {
+    "id": "a17",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 1,
+    "targetMoves": 32,
+    "colors": 6
+  },
+  {
+    "id": "a18",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 1,
+    "targetMoves": 34,
+    "colors": 6
+  },
+  {
+    "id": "a19",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 1,
+    "targetMoves": 36,
+    "colors": 6
+  },
+  {
+    "id": "a20",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ocean",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 5,
+    "tampCharges": 1,
+    "targetMoves": 38,
+    "colors": 6
+  },
+  {
+    "id": "a21",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 6,
+    "tampCharges": 1,
+    "targetMoves": 45,
+    "colors": 7
+  },
+  {
+    "id": "a22",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 6,
+    "tampCharges": 1,
+    "targetMoves": 50,
+    "colors": 7
+  },
+  {
+    "id": "a23",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 6,
+    "tampCharges": 1,
+    "targetMoves": 55,
+    "colors": 7
+  },
+  {
+    "id": "a24",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 6,
+    "tampCharges": 1,
+    "targetMoves": 60,
+    "colors": 7
+  },
+  {
+    "id": "a25",
+    "site": "arctic",
+    "siteName": "Arctic Station",
+    "tubes": [
+      {
+        "layers": [
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen"
+        ]
+      },
+      {
+        "layers": [
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash",
+          "clay"
+        ]
+      },
+      {
+        "layers": [
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white",
+          "ash"
+        ]
+      },
+      {
+        "layers": [
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice",
+          "white"
+        ]
+      },
+      {
+        "layers": [
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss",
+          "ice"
+        ]
+      },
+      {
+        "layers": [
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean",
+          "moss"
+        ]
+      },
+      {
+        "layers": [
+          "ice",
+          "white",
+          "ash",
+          "clay",
+          "lichen",
+          "ocean"
+        ]
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      },
+      {
+        "layers": []
+      }
+    ],
+    "height": 6,
+    "tampCharges": 1,
+    "targetMoves": 65,
+    "colors": 7
+  }
+]

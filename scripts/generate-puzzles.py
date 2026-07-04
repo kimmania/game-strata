@@ -1,13 +1,66 @@
 import json
 from collections import Counter
+import random
 
-def mk(cid, height, tamps, target, tubes):
-    all_colors = []
-    for tube in tubes:
-        all_colors.extend(tube)
-    counts = Counter(all_colors)
-    for c, n in counts.items():
-        assert n == height, f'{cid}: color {c} has {n} layers, expected {height}'
+random.seed(42)
+
+COLORS = ['ice','white','ash','clay','lichen','ocean','moss','rust']
+
+def make_solved(height, num_colors):
+    tubes = []
+    for c in range(num_colors):
+        tubes.append([COLORS[c]] * height)
+    return tubes
+
+def top_block(tube):
+    if not tube:
+        return (None, 0)
+    color = tube[-1]
+    count = 0
+    for i in range(len(tube)-1, -1, -1):
+        if tube[i] == color:
+            count += 1
+        else:
+            break
+    return (color, count)
+
+def can_reverse_move(tubes, src, dst, height):
+    if not tubes[src]:
+        return False
+    color, count = top_block(tubes[src])
+    dst_has_room = len(tubes[dst]) + count <= height
+    if not dst_has_room:
+        return False
+    if not tubes[dst]:
+        return True
+    dst_color, _ = top_block(tubes[dst])
+    return dst_color == color
+
+def apply_reverse(tubes, src, dst):
+    color, count = top_block(tubes[src])
+    block = tubes[src][-count:]
+    tubes[src] = tubes[src][:-count]
+    tubes[dst].extend(block)
+
+def scramble(tubes, height, moves=120):
+    n = len(tubes)
+    for _ in range(moves):
+        valid = []
+        for s in range(n):
+            for d in range(n):
+                if s != d and can_reverse_move(tubes, s, d, height):
+                    valid.append((s, d))
+        if not valid:
+            break
+        s, d = random.choice(valid)
+        apply_reverse(tubes, s, d)
+    return tubes
+
+def make_level(cid, height, colors_count, empty, tamps, target, scramble_moves, seed):
+    random.seed(seed)
+    solved = make_solved(height, colors_count)
+    tubes = [list(t) for t in solved] + [[] for _ in range(empty)]
+    tubes = scramble(tubes, height, scramble_moves)
     return {
         "id": cid,
         "site": "arctic",
@@ -16,250 +69,43 @@ def mk(cid, height, tamps, target, tubes):
         "height": height,
         "tampCharges": tamps,
         "targetMoves": target,
-        "colors": len(counts)
+        "colors": colors_count
     }
 
 levels = []
 
-# --- 3 colors h=4, 5 tubes ---
-levels.append(mk("a01", 4, 3, 8, [
-    ["ice", "ice", "white", "white"],
-    ["ash", "ash", "white", "white"],
-    ["ash", "ash", "ice", "ice"],
-    [],
-    []
-]))
+# Tier 1: 3 colors, h=4, 1 empty (4 tubes). Entry/intro.
+for i in range(5):
+    levels.append(make_level(f"a{i+1:02d}", 4, 3, 1, 2, 12 + i*2, 40 + i*6, seed=1 + i))
 
-levels.append(mk("a02", 4, 3, 8, [
-    ["ice", "ice", "ash", "ash"],
-    ["white", "white", "ash", "ash"],
-    ["white", "white", "ice", "ice"],
-    [],
-    []
-]))
+# Tier 2: 4 colors, h=4, 1 empty (5 tubes). Easy.
+for i in range(5):
+    levels.append(make_level(f"a{i+6:02d}", 4, 4, 1, 2, 14 + i*2, 50 + i*6, seed=10 + i))
 
-levels.append(mk("a03", 4, 2, 10, [
-    ["ice", "white", "ash", "ice"],
-    ["white", "ash", "ice", "white"],
-    ["ash", "ice", "white", "ash"],
-    [],
-    []
-]))
+# Tier 3: 5 colors, h=5, 1 empty (6 tubes). Medium.
+for i in range(5):
+    levels.append(make_level(f"a{i+11:02d}", 5, 5, 1, 2, 16 + i*3, 60 + i*7, seed=20 + i))
 
-levels.append(mk("a04", 4, 2, 10, [
-    ["ice", "ash", "ice", "white"],
-    ["white", "ice", "white", "ash"],
-    ["ash", "white", "ash", "ice"],
-    [],
-    []
-]))
+# Tier 4: 6 colors, h=5, 1 empty (7 tubes). Tamp required.
+for i in range(5):
+    levels.append(make_level(f"a{i+16:02d}", 5, 6, 1, 2, 20 + i*3, 70 + i*8, seed=30 + i))
 
-levels.append(mk("a05", 4, 2, 12, [
-    ["ice", "ash", "white", "ice"],
-    ["white", "ice", "ash", "white"],
-    ["ash", "white", "ice", "ash"],
-    [],
-    []
-]))
+# Tier 5: 7 colors, h=6, 1 empty (8 tubes). Hard.
+for i in range(5):
+    levels.append(make_level(f"a{i+21:02d}", 6, 7, 1, 1, 24 + i*4, 80 + i*9, seed=40 + i))
 
-# --- 4 colors h=4, 7 tubes ---
-levels.append(mk("a06", 4, 2, 14, [
-    ["ice", "ice", "white", "white"],
-    ["ash", "ash", "clay", "clay"],
-    ["ice", "ice", "ash", "ash"],
-    ["white", "white", "clay", "clay"],
-    [], [], []
-]))
+# Tier 6: 8 colors, h=6, 0 empty (8 tubes). Expert — only solvable with tamp.
+for i in range(5):
+    levels.append(make_level(f"a{i+26:02d}", 6, 8, 0, 2, 28 + i*5, 90 + i*10, seed=50 + i))
 
-levels.append(mk("a07", 4, 2, 14, [
-    ["ice", "ice", "clay", "clay"],
-    ["white", "white", "ash", "ash"],
-    ["ice", "ice", "white", "white"],
-    ["ash", "ash", "clay", "clay"],
-    [], [], []
-]))
-
-levels.append(mk("a08", 4, 2, 16, [
-    ["ice", "white", "ash", "clay"],
-    ["white", "ash", "clay", "ice"],
-    ["ash", "clay", "ice", "white"],
-    ["clay", "ice", "white", "ash"],
-    [], [], []
-]))
-
-levels.append(mk("a09", 4, 2, 16, [
-    ["ice", "ash", "white", "clay"],
-    ["ash", "white", "clay", "ice"],
-    ["white", "clay", "ice", "ash"],
-    ["clay", "ice", "ash", "white"],
-    [], [], []
-]))
-
-levels.append(mk("a10", 4, 2, 18, [
-    ["clay", "ice", "clay", "ice"],
-    ["ash", "white", "ash", "white"],
-    ["ice", "clay", "ice", "clay"],
-    ["white", "ash", "white", "ash"],
-    [], [], []
-]))
-
-# --- 5 colors h=5, 9 tubes ---
-levels.append(mk("a11", 5, 2, 20, [
-    ["ice", "ice", "white", "white", "ash"],
-    ["white", "white", "ash", "ash", "clay"],
-    ["ash", "ash", "clay", "clay", "lichen"],
-    ["clay", "clay", "lichen", "lichen", "ice"],
-    ["lichen", "lichen", "ice", "ice", "white"],
-    [], [], [], []
-]))
-
-levels.append(mk("a12", 5, 2, 22, [
-    ["white", "white", "ash", "ash", "clay"],
-    ["ash", "ash", "clay", "clay", "lichen"],
-    ["clay", "clay", "lichen", "lichen", "ice"],
-    ["lichen", "lichen", "ice", "ice", "white"],
-    ["ice", "ice", "white", "white", "ash"],
-    [], [], [], []
-]))
-
-levels.append(mk("a13", 5, 2, 24, [
-    ["ash", "clay", "lichen", "ice", "white"],
-    ["clay", "lichen", "ice", "white", "ash"],
-    ["lichen", "ice", "white", "ash", "clay"],
-    ["ice", "white", "ash", "clay", "lichen"],
-    ["white", "ash", "clay", "lichen", "ice"],
-    [], [], [], []
-]))
-
-levels.append(mk("a14", 5, 2, 26, [
-    ["clay", "lichen", "ice", "white", "ash"],
-    ["lichen", "ice", "white", "ash", "clay"],
-    ["ice", "white", "ash", "clay", "lichen"],
-    ["white", "ash", "clay", "lichen", "ice"],
-    ["ash", "clay", "lichen", "ice", "white"],
-    [], [], [], []
-]))
-
-levels.append(mk("a15", 5, 2, 28, [
-    ["ice", "ash", "lichen", "white", "clay"],
-    ["white", "ice", "clay", "ash", "lichen"],
-    ["ash", "white", "lichen", "clay", "ice"],
-    ["clay", "ash", "ice", "lichen", "white"],
-    ["lichen", "clay", "white", "ice", "ash"],
-    [], [], [], []
-]))
-
-# --- 6 colors h=5, 11 tubes ---
-# Diagonal-shift pattern guarantees exact counts
-C6 = ["ice", "white", "ash", "clay", "lichen", "ocean"]
-# tube f: [C6[(f+t)%6] for t in range(5)]
-# color counts: each color appears exactly 5 times (once per tube except its "skip")
-levels.append(mk("a16", 5, 1, 30, [
-    [C6[(0+t)%6] for t in range(5)],
-    [C6[(1+t)%6] for t in range(5)],
-    [C6[(2+t)%6] for t in range(5)],
-    [C6[(3+t)%6] for t in range(5)],
-    [C6[(4+t)%6] for t in range(5)],
-    [C6[(5+t)%6] for t in range(5)],
-    [], [], [], [], []
-]))
-
-levels.append(mk("a17", 5, 1, 32, [
-    [C6[(2+t)%6] for t in range(5)],
-    [C6[(3+t)%6] for t in range(5)],
-    [C6[(4+t)%6] for t in range(5)],
-    [C6[(5+t)%6] for t in range(5)],
-    [C6[(0+t)%6] for t in range(5)],
-    [C6[(1+t)%6] for t in range(5)],
-    [], [], [], [], []
-]))
-
-levels.append(mk("a18", 5, 1, 34, [
-    [C6[(1+t)%6] for t in range(5)],
-    [C6[(3+t)%6] for t in range(5)],
-    [C6[(5+t)%6] for t in range(5)],
-    [C6[(0+t)%6] for t in range(5)],
-    [C6[(2+t)%6] for t in range(5)],
-    [C6[(4+t)%6] for t in range(5)],
-    [], [], [], [], []
-]))
-
-levels.append(mk("a19", 5, 1, 36, [
-    [C6[(4+t)%6] for t in range(5)],
-    [C6[(0+t)%6] for t in range(5)],
-    [C6[(2+t)%6] for t in range(5)],
-    [C6[(5+t)%6] for t in range(5)],
-    [C6[(1+t)%6] for t in range(5)],
-    [C6[(3+t)%6] for t in range(5)],
-    [], [], [], [], []
-]))
-
-levels.append(mk("a20", 5, 1, 38, [
-    [C6[(5+t)%6] for t in range(5)],
-    [C6[(4+t)%6] for t in range(5)],
-    [C6[(3+t)%6] for t in range(5)],
-    [C6[(2+t)%6] for t in range(5)],
-    [C6[(1+t)%6] for t in range(5)],
-    [C6[(0+t)%6] for t in range(5)],
-    [], [], [], [], []
-]))
-
-# --- 7 colors h=6, 13 tubes ---
-C7 = ["ice", "white", "ash", "clay", "lichen", "ocean", "moss"]
-levels.append(mk("a21", 6, 1, 45, [
-    [C7[(0+t)%7] for t in range(6)],
-    [C7[(1+t)%7] for t in range(6)],
-    [C7[(2+t)%7] for t in range(6)],
-    [C7[(3+t)%7] for t in range(6)],
-    [C7[(4+t)%7] for t in range(6)],
-    [C7[(5+t)%7] for t in range(6)],
-    [C7[(6+t)%7] for t in range(6)],
-    [], [], [], [], [], []
-]))
-
-levels.append(mk("a22", 6, 1, 50, [
-    [C7[(3+t)%7] for t in range(6)],
-    [C7[(4+t)%7] for t in range(6)],
-    [C7[(5+t)%7] for t in range(6)],
-    [C7[(6+t)%7] for t in range(6)],
-    [C7[(0+t)%7] for t in range(6)],
-    [C7[(1+t)%7] for t in range(6)],
-    [C7[(2+t)%7] for t in range(6)],
-    [], [], [], [], [], []
-]))
-
-levels.append(mk("a23", 6, 1, 55, [
-    [C7[(2+t)%7] for t in range(6)],
-    [C7[(4+t)%7] for t in range(6)],
-    [C7[(6+t)%7] for t in range(6)],
-    [C7[(1+t)%7] for t in range(6)],
-    [C7[(3+t)%7] for t in range(6)],
-    [C7[(5+t)%7] for t in range(6)],
-    [C7[(0+t)%7] for t in range(6)],
-    [], [], [], [], [], []
-]))
-
-levels.append(mk("a24", 6, 1, 60, [
-    [C7[(5+t)%7] for t in range(6)],
-    [C7[(0+t)%7] for t in range(6)],
-    [C7[(2+t)%7] for t in range(6)],
-    [C7[(4+t)%7] for t in range(6)],
-    [C7[(6+t)%7] for t in range(6)],
-    [C7[(1+t)%7] for t in range(6)],
-    [C7[(3+t)%7] for t in range(6)],
-    [], [], [], [], [], []
-]))
-
-levels.append(mk("a25", 6, 1, 65, [
-    [C7[(6+t)%7] for t in range(6)],
-    [C7[(5+t)%7] for t in range(6)],
-    [C7[(4+t)%7] for t in range(6)],
-    [C7[(3+t)%7] for t in range(6)],
-    [C7[(2+t)%7] for t in range(6)],
-    [C7[(1+t)%7] for t in range(6)],
-    [C7[(0+t)%7] for t in range(6)],
-    [], [], [], [], [], []
-]))
+# Verify layer counts
+for lvl in levels:
+    allc = []
+    for t in lvl["tubes"]:
+        allc.extend(t["layers"])
+    cnt = Counter(allc)
+    for c, n in cnt.items():
+        assert n == lvl["height"], f"{lvl['id']}: color {c} count {n} != height {lvl['height']}"
 
 with open('src/engine/puzzles.json', 'w') as f:
     json.dump(levels, f, indent=2)

@@ -164,12 +164,12 @@ def a_config(idx):
         {'height':5,'colors':5,'empty':3,'tamps':2,'scramble':120,'min_opt':15},
         {'height':5,'colors':6,'empty':2,'tamps':2,'scramble':130,'min_opt':16},
         {'height':5,'colors':6,'empty':2,'tamps':2,'scramble':140,'min_opt':17},
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':150,'min_opt':18},
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':160,'min_opt':19},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':170,'min_opt':20},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':180,'min_opt':21},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':190,'min_opt':22},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':200,'min_opt':23},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':150,'min_opt':18},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':160,'min_opt':19},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':170,'min_opt':20},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':180,'min_opt':21},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':190,'min_opt':22},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':200,'min_opt':23},
     ]
     c = ramps[idx % len(ramps)]
     c['margin'] = 5
@@ -183,10 +183,10 @@ def d_config(idx):
         {'height':5,'colors':5,'empty':2,'tamps':2,'scramble':115,'min_opt':14},
         {'height':5,'colors':6,'empty':2,'tamps':2,'scramble':125,'min_opt':15},
         {'height':5,'colors':6,'empty':1,'tamps':2,'scramble':135,'min_opt':16},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':145,'min_opt':17},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':155,'min_opt':18},
-        {'height':5,'colors':8,'empty':1,'tamps':1,'scramble':165,'min_opt':19},
-        {'height':5,'colors':8,'empty':1,'tamps':1,'scramble':175,'min_opt':20},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':145,'min_opt':17},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':155,'min_opt':18},
+        {'height':5,'colors':8,'empty':1,'tamps':2,'scramble':165,'min_opt':19},
+        {'height':5,'colors':8,'empty':1,'tamps':2,'scramble':175,'min_opt':20},
     ]
     c = ramps[idx % len(ramps)]
     c['margin'] = 5
@@ -198,12 +198,12 @@ def s_config(idx):
         {'height':5,'colors':5,'empty':2,'tamps':2,'scramble':120,'min_opt':14},
         {'height':5,'colors':6,'empty':2,'tamps':2,'scramble':130,'min_opt':15},
         {'height':5,'colors':6,'empty':1,'tamps':2,'scramble':140,'min_opt':16},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':150,'min_opt':17},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':160,'min_opt':18},
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':170,'min_opt':19},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':180,'min_opt':20},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':190,'min_opt':21},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':200,'min_opt':22},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':150,'min_opt':17},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':160,'min_opt':18},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':170,'min_opt':19},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':180,'min_opt':20},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':190,'min_opt':21},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':200,'min_opt':22},
     ]
     c = ramps[idx % len(ramps)]
     c['margin'] = 5
@@ -213,14 +213,14 @@ def v_config(idx):
     ramps = [
         {'height':5,'colors':6,'empty':2,'tamps':2,'scramble':140,'min_opt':16},
         {'height':5,'colors':6,'empty':1,'tamps':2,'scramble':150,'min_opt':17},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':160,'min_opt':18},
-        {'height':5,'colors':7,'empty':1,'tamps':1,'scramble':170,'min_opt':19},
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':180,'min_opt':20},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':190,'min_opt':21},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':200,'min_opt':22},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':210,'min_opt':23},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':220,'min_opt':24},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':230,'min_opt':25},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':160,'min_opt':18},
+        {'height':5,'colors':7,'empty':1,'tamps':2,'scramble':170,'min_opt':19},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':180,'min_opt':20},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':190,'min_opt':21},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':200,'min_opt':22},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':210,'min_opt':23},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':220,'min_opt':24},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':230,'min_opt':25},
     ]
     c = ramps[idx % len(ramps)]
     c['margin'] = 5
@@ -228,16 +228,16 @@ def v_config(idx):
 
 def m_config(idx):
     ramps = [
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':180,'min_opt':19},
-        {'height':6,'colors':7,'empty':1,'tamps':1,'scramble':190,'min_opt':20},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':200,'min_opt':21},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':210,'min_opt':22},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':220,'min_opt':23},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':230,'min_opt':24},
-        {'height':6,'colors':8,'empty':1,'tamps':1,'scramble':240,'min_opt':25},
-        {'height':6,'colors':8,'empty':1,'tamps':0,'scramble':250,'min_opt':26},
-        {'height':6,'colors':8,'empty':1,'tamps':0,'scramble':260,'min_opt':27},
-        {'height':6,'colors':8,'empty':1,'tamps':0,'scramble':270,'min_opt':28},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':180,'min_opt':19},
+        {'height':6,'colors':7,'empty':1,'tamps':2,'scramble':190,'min_opt':20},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':200,'min_opt':21},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':210,'min_opt':22},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':220,'min_opt':23},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':230,'min_opt':24},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':240,'min_opt':25},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':250,'min_opt':26},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':260,'min_opt':27},
+        {'height':6,'colors':8,'empty':1,'tamps':2,'scramble':270,'min_opt':28},
     ]
     c = ramps[idx % len(ramps)]
     c['margin'] = 5

@@ -47,6 +47,7 @@ export interface SaveData {
     reducedMotion: boolean;
     highContrast: boolean;
     colorBlind: boolean;
+    showNames: boolean;
   };
   hasSeenIntro: boolean;
   hasSeenHelp: boolean;

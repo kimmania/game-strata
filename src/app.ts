@@ -51,6 +51,7 @@ const els = {
   soundToggle: () => document.getElementById('sound-toggle') as HTMLButtonElement,
   motionToggle: () => document.getElementById('motion-toggle') as HTMLButtonElement,
   contrastToggle: () => document.getElementById('contrast-toggle') as HTMLButtonElement,
+  namesToggle: () => document.getElementById('names-toggle') as HTMLButtonElement,
   resetProgressBtn: () => document.getElementById('reset-progress-btn')!,
   resetConfirmBtn: () => document.getElementById('reset-confirm-btn')!,
   levelCompleteOverlay: () => document.getElementById('level-complete-overlay')!,
@@ -232,6 +233,12 @@ function renderTubes() {
         layer.style.backgroundColor = COLOR_CSS[color];
         layer.style.borderColor = COLOR_CSS[color];
         layer.title = COLOR_NAMES[color];
+        if (saveData.settings.showNames) {
+          const label = document.createElement('span');
+          label.className = 'layer-name';
+          label.textContent = COLOR_NAMES[color];
+          layer.appendChild(label);
+        }
       } else {
         layer.classList.add('empty');
       }
@@ -417,6 +424,7 @@ function showSettings() {
   updateToggle(els.soundToggle(), s.sound);
   updateToggle(els.motionToggle(), s.reducedMotion);
   updateToggle(els.contrastToggle(), s.highContrast);
+  updateToggle(els.namesToggle(), s.showNames);
   els.settingsOverlay().classList.add('active');
 }
 
@@ -424,12 +432,15 @@ function hideSettings() {
   els.settingsOverlay().classList.remove('active');
 }
 
-function toggleSetting(key: keyof typeof saveData.settings, btn: HTMLButtonElement) {
+function toggleSetting(key: keyof typeof saveData.settings, btn: HTMLButtonElement, render = false) {
   const current = saveData.settings[key];
   saveData = patchSettings(saveData, { [key]: !current });
   updateToggle(btn, !current as boolean);
   debouncedSave();
   refreshSettings();
+  if (render && key === 'showNames') {
+    renderTubes();
+  }
 }
 
 function updateToggle(btn: HTMLButtonElement, on: boolean) {
@@ -472,6 +483,7 @@ function wireEvents() {
   els.soundToggle().addEventListener('click', () => toggleSetting('sound', els.soundToggle()));
   els.motionToggle().addEventListener('click', () => toggleSetting('reducedMotion', els.motionToggle()));
   els.contrastToggle().addEventListener('click', () => toggleSetting('highContrast', els.contrastToggle()));
+  els.namesToggle().addEventListener('click', () => toggleSetting('showNames', els.namesToggle(), true));
 
   els.resetProgressBtn().addEventListener('click', handleResetProgress);
   els.resetConfirmBtn().addEventListener('click', handleResetProgress);

@@ -17,6 +17,7 @@ export function getDefaultSave(): SaveData {
       reducedMotion: false,
       highContrast: false,
       colorBlind: false,
+      showNames: false,
     },
     hasSeenIntro: false,
     hasSeenHelp: false,

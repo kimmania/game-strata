@@ -49,17 +49,27 @@ export function listenForAudioUnlock() {
 }
 
 export function play(name: SoundName) {
-  unlockAudio();
   if (!settings.sound) return;
   const c = ctx();
   if (!c) return;
-  if (c.state !== 'running') {
-    requestAnimationFrame(() => {
-      if (ctx().state === 'running') scheduleSound(name);
-    });
+
+  if (c.state === 'running') {
+    scheduleSound(name);
     return;
   }
-  scheduleSound(name);
+
+  // Audio contexts start suspended; resume on first user gesture, then play.
+  try {
+    c.resume()
+      .then(() => {
+        if (settings.sound) scheduleSound(name);
+      })
+      .catch(() => {
+        // autoplay policy blocked sound
+      });
+  } catch {
+    // ignore
+  }
 }
 
 function scheduleSound(name: SoundName) {

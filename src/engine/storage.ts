@@ -1,8 +1,20 @@
 import type { SaveData, Settings } from './types';
 import { SAVE_KEY, SAVE_VERSION } from './constants';
+import type { LevelData } from './types';
 
 // compatibility: previous builds used catalyst-save. Migrate if present.
 const LEGACY_SAVE_KEY = 'catalyst-save';
+
+let levelBankForUnlock: LevelData[] | null = null;
+
+export function setLevelBankForUnlock(bank: LevelData[]) {
+  levelBankForUnlock = bank;
+}
+
+function levelExists(id: string): boolean {
+  if (!levelBankForUnlock) return true;
+  return levelBankForUnlock.some((l) => l.id === id);
+}
 
 export function getDefaultSave(): SaveData {
   return {
@@ -71,6 +83,23 @@ function migrateSave(old: SaveData): SaveData {
     ...(old.progress?.unlocked ?? []),
     ...(old.currentLevel ? [old.currentLevel] : []),
   ]);
+
+  // If a player completed the final level of a site before cross-site unlock was implemented,
+  // unlock the first level of the following site.
+  const lastBySite: Record<string, string> = { a: 'a40', d: 'd40', s: 's40', v: 'v40' };
+  const prefixes = ['a', 'd', 's', 'v', 'm'];
+  const completed = Object.keys(old.progress?.completed ?? {});
+  for (const id of completed) {
+    const prefix = id[0];
+    if (id !== lastBySite[prefix]) continue;
+    const idx = prefixes.indexOf(prefix);
+    if (idx >= 0 && idx < prefixes.length - 1) {
+      unlocked.add(`${prefixes[idx + 1]}01`);
+    }
+  }
+
+  fresh.currentLevel = old.currentLevel ?? null;
+
   fresh.progress = {
     ...fresh.progress,
     completed: { ...(old.progress?.completed ?? {}) },
@@ -98,12 +127,33 @@ export function completeLevel(data: SaveData, levelId: string, stars: number, mo
   unlocked.add(levelId);
 
   const nextId = deriveNextLevelId(levelId);
-  if (nextId) unlocked.add(nextId);
+  if (nextId && levelExists(nextId)) {
+    unlocked.add(nextId);
+  } else {
+    // Finished the last level of a site; unlock the first level of the next site.
+    const nextSitePrefix = deriveNextSitePrefix(levelId);
+    if (nextSitePrefix) unlocked.add(`${nextSitePrefix}01`);
+  }
 
   return {
     ...data,
     progress: { completed, bestMoves, unlocked: Array.from(unlocked) },
   };
+}
+
+function deriveNextSitePrefix(current: string): string | null {
+  const lastBySite: Record<string, string> = {
+    a: 'a40',
+    d: 'd40',
+    s: 's40',
+    v: 'v40',
+  };
+  const order = ['a', 'd', 's', 'v', 'm'];
+  const prefix = current[0];
+  if (!lastBySite[prefix] || current !== lastBySite[prefix]) return null;
+  const idx = order.indexOf(prefix);
+  if (idx >= 0 && idx < order.length - 1) return order[idx + 1];
+  return null;
 }
 
 function deriveNextLevelId(current: string): string | null {

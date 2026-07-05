@@ -8,7 +8,7 @@ import {
   checkWin,
   computeStars,
 } from './engine/game-logic';
-import { loadSave, saveSave, getDefaultSave, completeLevel, clearSave, patchSettings } from './engine/storage';
+import { loadSave, saveSave, getDefaultSave, completeLevel, clearSave, patchSettings, setLevelBankForUnlock } from './engine/storage';
 import { COLOR_CSS, COLOR_NAMES, SITES, SITE_ORDER } from './engine/constants';
 import type { SaveData, LevelData, GameState } from './engine/types';
 import { play, refreshSettings, listenForAudioUnlock } from './engine/audio';
@@ -532,6 +532,7 @@ function deriveNextLevelId(current: string): string | null {
 export function initApp() {
   listenForAudioUnlock();
   saveData = loadSave();
+  setLevelBankForUnlock(getLevels());
 
   initIntro();
   wireEvents();

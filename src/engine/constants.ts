@@ -119,7 +119,7 @@ export const COLOR_NAMES: Record<TubeColor, string> = {
   anorthite: 'Anorthite',
 };
 
-export const SAVE_VERSION = 2;
+export const SAVE_VERSION = 3;
 export const SAVE_KEY = 'strata-save';
 
 export interface LevelConfig {

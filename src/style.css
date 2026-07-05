@@ -167,7 +167,7 @@ html, body {
   margin-bottom: 20px;
 }
 .map-header h1 {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 300;
   color: var(--accent);
   margin: 0;
@@ -181,11 +181,34 @@ html, body {
 
 #map-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+  flex-direction: column;
+  gap: 18px;
   overflow-y: auto;
   padding: 8px;
+}
+
+.map-region {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.region-heading {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px solid var(--tube-border);
+  padding-bottom: 6px;
+}
+
+.region-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 .map-node {
@@ -193,9 +216,9 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
   border: 1px solid var(--tube-border);
   background: var(--tube-bg);
   color: var(--text-primary);
@@ -284,10 +307,37 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
+  justify-content: flex-start;
+  gap: 12px;
   padding: 16px;
-  overflow: hidden;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.goal-panel {
+  width: 100%;
+  max-width: 540px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--tube-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.goal-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.goal-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  line-height: 1.35;
 }
 
 /* Tube Rack */

@@ -1,6 +1,9 @@
 import type { SaveData, Settings } from './types';
 import { SAVE_KEY, SAVE_VERSION } from './constants';
 
+// compatibility: previous builds used catalyst-save. Migrate if present.
+const LEGACY_SAVE_KEY = 'catalyst-save';
+
 export function getDefaultSave(): SaveData {
   return {
     version: SAVE_VERSION,
@@ -24,7 +27,14 @@ export function getDefaultSave(): SaveData {
 
 export function loadSave(): SaveData {
   try {
-    const raw = localStorage.getItem(SAVE_KEY);
+    let raw = localStorage.getItem(SAVE_KEY);
+    if (!raw) {
+      raw = localStorage.getItem(LEGACY_SAVE_KEY);
+      if (raw) {
+        // migrate on first load
+        localStorage.setItem(SAVE_KEY, raw);
+      }
+    }
     if (!raw) return getDefaultSave();
     const data = JSON.parse(raw) as SaveData;
     if (!data || typeof data !== 'object') return getDefaultSave();
@@ -55,6 +65,18 @@ function migrateSave(old: SaveData): SaveData {
   fresh.hasSeenIntro = old.hasSeenIntro ?? false;
   fresh.hasSeenHelp = old.hasSeenHelp ?? false;
   fresh.version = SAVE_VERSION;
+  const unlocked = new Set([
+    ...fresh.progress.unlocked,
+    ...Object.keys(old.progress?.completed ?? {}),
+    ...(old.progress?.unlocked ?? []),
+    ...(old.currentLevel ? [old.currentLevel] : []),
+  ]);
+  fresh.progress = {
+    ...fresh.progress,
+    completed: { ...(old.progress?.completed ?? {}) },
+    bestMoves: { ...(old.progress?.bestMoves ?? {}) },
+    unlocked: Array.from(unlocked),
+  };
   return fresh;
 }
 

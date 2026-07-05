@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "generate-puzzles": "node scripts/generate-puzzles.js",
+    "generate-puzzles": "python3 scripts/generate-puzzles.py",
+    "expand-levels": "python3 scripts/expand_levels.py",
     "preview": "vite preview"
   },
   "devDependencies": {

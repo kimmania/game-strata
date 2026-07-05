@@ -9,7 +9,7 @@ import {
   computeStars,
 } from './engine/game-logic';
 import { loadSave, saveSave, getDefaultSave, completeLevel, clearSave, patchSettings } from './engine/storage';
-import { COLOR_CSS, COLOR_NAMES } from './engine/constants';
+import { COLOR_CSS, COLOR_NAMES, SITES, SITE_ORDER } from './engine/constants';
 import type { SaveData, LevelData, GameState } from './engine/types';
 import { play, startMusic, stopMusic, refreshSettings, listenForAudioUnlock } from './engine/audio';
 
@@ -21,6 +21,7 @@ let saveTimer: ReturnType<typeof setTimeout> | null = null;
 let state: GameState | null = null;
 let saveData: SaveData = getDefaultSave();
 let currentLevelId: string | null = null;
+let helpReturnToIntro = false;
 
 const els = {
   introScreen: () => document.getElementById('intro-screen')!,
@@ -99,6 +100,7 @@ function initIntro() {
     saveData.hasSeenIntro = true;
     debouncedSave();
     if (!saveData.hasSeenHelp) {
+      helpReturnToIntro = true;
       showHelp();
     } else {
       showMap();
@@ -116,36 +118,62 @@ function renderMap() {
   const container = els.mapContainer();
   container.innerHTML = '';
   const levels = getLevels();
-
+  const bySite: Record<string, LevelData[]> = {};
   for (const lvl of levels) {
-    const completed = saveData.progress.completed[lvl.id] ?? 0;
-    const unlocked = saveData.progress.unlocked.includes(lvl.id);
-    const node = document.createElement('button');
-    node.className = 'map-node';
-    node.dataset.level = lvl.id;
-    if (completed > 0) {
-      node.classList.add('completed');
-      node.setAttribute('aria-label', `Level ${lvl.id}: ${completed} stars`);
-    } else if (unlocked) {
-      node.classList.add('unlocked');
-      node.setAttribute('aria-label', `Level ${lvl.id}: unlocked`);
-    } else {
-      node.classList.add('locked');
-      node.disabled = true;
-      node.setAttribute('aria-label', `Level ${lvl.id}: locked`);
+    bySite[lvl.site] = bySite[lvl.site] ?? [];
+    bySite[lvl.site].push(lvl);
+  }
+
+  for (const siteKey of SITE_ORDER) {
+    const siteLevels = bySite[siteKey];
+    if (!siteLevels || siteLevels.length === 0) continue;
+    const siteInfo = SITES[siteKey] ?? { name: siteKey, bgGradient: '' };
+
+    const region = document.createElement('section');
+    region.className = 'map-region';
+    region.dataset.site = siteKey;
+
+    const heading = document.createElement('h2');
+    heading.className = 'region-heading';
+    heading.textContent = siteInfo.name;
+    region.appendChild(heading);
+
+    const nodesWrap = document.createElement('div');
+    nodesWrap.className = 'region-nodes';
+
+    for (const lvl of siteLevels) {
+      const completed = saveData.progress.completed[lvl.id] ?? 0;
+      const unlocked = saveData.progress.unlocked.includes(lvl.id);
+      const node = document.createElement('button');
+      node.className = 'map-node';
+      node.dataset.level = lvl.id;
+      if (completed > 0) {
+        node.classList.add('completed');
+        node.setAttribute('aria-label', `Level ${lvl.id}: ${completed} stars`);
+      } else if (unlocked) {
+        node.classList.add('unlocked');
+        node.setAttribute('aria-label', `Level ${lvl.id}: unlocked`);
+      } else {
+        node.classList.add('locked');
+        node.disabled = true;
+        node.setAttribute('aria-label', `Level ${lvl.id}: locked`);
+      }
+      node.textContent = lvl.id.toUpperCase();
+
+      const stars = document.createElement('div');
+      stars.className = 'node-stars';
+      stars.textContent = '⭐'.repeat(completed);
+      node.appendChild(stars);
+
+      node.addEventListener('click', () => {
+        play('click');
+        startLevel(lvl.id);
+      });
+      nodesWrap.appendChild(node);
     }
-    node.textContent = lvl.id.toUpperCase();
 
-    const stars = document.createElement('div');
-    stars.className = 'node-stars';
-    stars.textContent = '⭐'.repeat(completed);
-    node.appendChild(stars);
-
-    node.addEventListener('click', () => {
-      play('click');
-      startLevel(lvl.id);
-    });
-    container.appendChild(node);
+    region.appendChild(nodesWrap);
+    container.appendChild(region);
   }
 }
 
@@ -159,6 +187,16 @@ function startLevel(id: string) {
 
   state = initializeLevel(lvl);
   showScreen('game');
+
+  // Apply site-specific background gradient if defined
+  const gameScreen = els.gameScreen();
+  const siteInfo = SITES[lvl.site];
+  if (siteInfo?.bgGradient) {
+    gameScreen.style.background = siteInfo.bgGradient;
+  } else {
+    gameScreen.style.background = '';
+  }
+
   updateGameUI();
   renderTubes();
   announce(`Level ${id}. Tube height ${lvl.height}. Tamp charges: ${lvl.tampCharges}.`);
@@ -362,8 +400,15 @@ function showHelp() {
 
 function hideHelp() {
   els.helpOverlay().classList.remove('active');
-  saveData.hasSeenHelp = true;
-  debouncedSave();
+  if (!saveData.hasSeenHelp) {
+    saveData.hasSeenHelp = true;
+    debouncedSave();
+    if (helpReturnToIntro) {
+      helpReturnToIntro = false;
+      showMap();
+      return;
+    }
+  }
 }
 
 /* ─── Settings ─── */

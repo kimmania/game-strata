@@ -14,7 +14,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
 
-  <title>Strata — Ice-Core Puzzle</title>
+  <title>Strata — Core Sampling Puzzle</title>
 </head>
 <body>
   <div id="app">
@@ -40,11 +40,10 @@
         <button id="map-help" class="icon-btn" title="How to Play" aria-label="How to Play">?</button>
       </div>
       <div class="map-header">
-        <h1>Arctic Station</h1>
+        <h1>Research Sites</h1>
         <p class="map-subtitle">Expedition Log</p>
       </div>
       <div id="map-container">
-        <div class="region-path" id="path-arctic"></div>
       </div>
     </div>
 
@@ -68,6 +67,10 @@
       </header>
 
       <main id="game-area">
+        <div class="goal-panel" id="goal-panel" aria-live="polite">
+          <span class="goal-label">Sampling Target</span>
+          <span class="goal-text">Each tube must contain only one sediment color. Empty tubes are fine.</span>
+        </div>
         <div id="tube-rack"></div>
         <div id="tamp-bar">
           <button id="tamp-btn" class="btn btn-bright" disabled>

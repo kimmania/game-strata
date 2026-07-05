@@ -14,7 +14,6 @@ export function getDefaultSave(): SaveData {
     },
     settings: {
       sound: true,
-      music: true,
       reducedMotion: false,
       highContrast: false,
       colorBlind: false,

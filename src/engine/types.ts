@@ -44,7 +44,6 @@ export interface SaveData {
   };
   settings: {
     sound: boolean;
-    music: boolean;
     reducedMotion: boolean;
     highContrast: boolean;
     colorBlind: boolean;

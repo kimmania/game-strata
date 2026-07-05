@@ -42,7 +42,6 @@ export function listenForAudioUnlock() {
   unlockAttached = true;
   const handler = () => {
     unlockAudio();
-    if (settings.music && !isMusicPlaying) startMusic();
   };
   document.addEventListener('pointerdown', handler, { once: true });
   document.addEventListener('keydown', handler, { once: true });
@@ -218,64 +217,4 @@ function playUnlock() {
   o.connect(g).connect(c.destination);
   o.start();
   o.stop(c.currentTime + 0.35);
-}
-
-// Ambient wind via oscillators
-let musicNodes: (AudioScheduledSourceNode | GainNode)[] | null = null;
-let isMusicPlaying = false;
-
-export function startMusic() {
-  const c = ctx();
-  if (!c) return;
-  if (isMusicPlaying) return;
-  if (!settings.music) return;
-  unlockAudio();
-  isMusicPlaying = true;
-
-  // Wind noise
-  const len = Math.ceil(c.sampleRate * 4);
-  const buffer = c.createBuffer(1, len, c.sampleRate);
-  const data = buffer.getChannelData(0);
-  for (let i = 0; i < len; i++) {
-    data[i] = Math.random() * 2 - 1;
-  }
-  const windSrc = c.createBufferSource();
-  windSrc.buffer = buffer;
-  windSrc.loop = true;
-  const windFilter = c.createBiquadFilter();
-  windFilter.type = 'bandpass';
-  windFilter.frequency.value = 300;
-  windFilter.Q.value = 0.6;
-  const windGain = c.createGain();
-  windGain.gain.value = 0.02;
-  windSrc.connect(windFilter).connect(windGain).connect(c.destination);
-  windSrc.start();
-
-  // Low drone (station generator hum)
-  const drone = c.createOscillator();
-  drone.type = 'sine';
-  drone.frequency.value = 50;
-  const droneGain = c.createGain();
-  droneGain.gain.value = 0.015;
-  drone.connect(droneGain).connect(c.destination);
-  drone.start();
-
-  // Distant ice crackle (randomized clicks)
-  musicNodes = [windSrc, windFilter, windGain, drone, droneGain];
-}
-
-export function stopMusic() {
-  if (!isMusicPlaying || !musicNodes) return;
-  const c = ctx();
-  musicNodes.forEach((node) => {
-    try {
-      if (node instanceof OscillatorNode || node instanceof AudioBufferSourceNode) {
-        node.stop(c.currentTime + 0.1);
-      }
-    } catch {
-      // ignore
-    }
-  });
-  isMusicPlaying = false;
-  musicNodes = null;
 }

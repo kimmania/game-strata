@@ -11,7 +11,7 @@ import {
 import { loadSave, saveSave, getDefaultSave, completeLevel, clearSave, patchSettings } from './engine/storage';
 import { COLOR_CSS, COLOR_NAMES, SITES, SITE_ORDER } from './engine/constants';
 import type { SaveData, LevelData, GameState } from './engine/types';
-import { play, startMusic, stopMusic, refreshSettings, listenForAudioUnlock } from './engine/audio';
+import { play, refreshSettings, listenForAudioUnlock } from './engine/audio';
 
 import levelBank from './engine/puzzles.json';
 
@@ -49,7 +49,6 @@ const els = {
   settingsOverlay: () => document.getElementById('settings-overlay')!,
   settingsClose: () => document.getElementById('settings-close')!,
   soundToggle: () => document.getElementById('sound-toggle') as HTMLButtonElement,
-  musicToggle: () => document.getElementById('music-toggle') as HTMLButtonElement,
   motionToggle: () => document.getElementById('motion-toggle') as HTMLButtonElement,
   contrastToggle: () => document.getElementById('contrast-toggle') as HTMLButtonElement,
   resetProgressBtn: () => document.getElementById('reset-progress-btn')!,
@@ -416,7 +415,6 @@ function showSettings() {
   refreshSettings();
   const s = saveData.settings;
   updateToggle(els.soundToggle(), s.sound);
-  updateToggle(els.musicToggle(), s.music);
   updateToggle(els.motionToggle(), s.reducedMotion);
   updateToggle(els.contrastToggle(), s.highContrast);
   els.settingsOverlay().classList.add('active');
@@ -431,14 +429,7 @@ function toggleSetting(key: keyof typeof saveData.settings, btn: HTMLButtonEleme
   saveData = patchSettings(saveData, { [key]: !current });
   updateToggle(btn, !current as boolean);
   debouncedSave();
-
-  if (key === 'music') {
-    if (saveData.settings.music) startMusic();
-    else stopMusic();
-  }
-  if (key === 'sound' || key === 'music') {
-    refreshSettings();
-  }
+  refreshSettings();
 }
 
 function updateToggle(btn: HTMLButtonElement, on: boolean) {
@@ -479,7 +470,6 @@ function wireEvents() {
   els.settingsClose().addEventListener('click', hideSettings);
 
   els.soundToggle().addEventListener('click', () => toggleSetting('sound', els.soundToggle()));
-  els.musicToggle().addEventListener('click', () => toggleSetting('music', els.musicToggle()));
   els.motionToggle().addEventListener('click', () => toggleSetting('reducedMotion', els.motionToggle()));
   els.contrastToggle().addEventListener('click', () => toggleSetting('highContrast', els.contrastToggle()));
 
@@ -530,8 +520,6 @@ function deriveNextLevelId(current: string): string | null {
 export function initApp() {
   listenForAudioUnlock();
   saveData = loadSave();
-
-  if (saveData.settings.music) startMusic();
 
   initIntro();
   wireEvents();
